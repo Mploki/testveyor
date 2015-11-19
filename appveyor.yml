@@ -1,0 +1,39 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 1.0.{build}
+
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+
+# scripts that are called at very beginning, before repo cloning
+init:
+  - git config --global user.email "florian.huckel@epita.fr"
+  - git config --global user.name "Mploki"
+
+# clone directory
+clone_folder: C:\projects\testveyor
+
+# environment variables
+environment:
+  GithubUsername: Mploki
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+install:
+  - appveyor DownloadFile http://curl.haxx.se/ca/cacert.pem
+  - SET SSL_CERT_FILE=%APPVEYOR_BUILD_FOLDER%\cacert.pem
+
+build_script:
+  - cmd: cd src/
+  - cmd: cl hello.c
+
+test: off
+#cache:
+#  - C:\Ruby193\lib\ruby\gems\1.9.1
+#  - C:\Ruby193\bin
