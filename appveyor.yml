@@ -25,11 +25,8 @@ environment:
 #       build configuration       #
 #---------------------------------#
 
-install:
-  - appveyor DownloadFile http://curl.haxx.se/ca/cacert.pem
-  - SET SSL_CERT_FILE=%APPVEYOR_BUILD_FOLDER%\cacert.pem
-
 build_script:
+  - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
   - cmd: cd src/
   - cmd: cl hello.c
 
