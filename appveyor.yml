@@ -33,7 +33,7 @@ build_script:
 test: off
 
 artifacts:
-  - path: src/a.out
+  - path: src/hello.exe
 #cache:
 #  - C:\Ruby193\lib\ruby\gems\1.9.1
 #  - C:\Ruby193\bin
