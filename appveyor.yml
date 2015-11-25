@@ -27,8 +27,8 @@ environment:
 
 build_script:
   - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
-  - cmd: cd src/
-  - cmd: cl hello.c
+  - cmd: npm install sqlite3
+  - cmd: npm install bluetooth-serial-port
 
 test: off
 
