@@ -29,8 +29,8 @@ build_script:
   - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
   - cmd: npm install sqlite3
   - cmd: npm install bluetooth-serial-port
-  - cmd: npm install mdns
   - cmd: npm install phantomjs
+  - cmd: npm install mdns
 
 test: off
 
